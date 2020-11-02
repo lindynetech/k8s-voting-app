@@ -151,7 +151,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 5000
-      targetPort: 80
+      targetPort: 8080
       name: vote
   selector:
     app: vote
@@ -178,7 +178,7 @@ spec:
           image: us.gcr.io/modern-devops-294018/vote:1.0
           ports:
             - 
-              containerPort: 80
+              containerPort: 8080
               name: vote
               
 --- 
