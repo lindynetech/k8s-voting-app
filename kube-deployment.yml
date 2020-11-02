@@ -72,7 +72,7 @@ spec:
       containers:
         - 
           name: db
-          image: postgres:9.4
+          image: postgres
           env:
             - name: PGDATA
               value: /var/lib/postgresql/data/pgdata
@@ -135,7 +135,7 @@ spec:
     spec:
       containers:
       - name: result
-        image: us.gcr.io/modern-devops-294018/result
+        image: us.gcr.io/modern-devops-294018/result:1.0
         ports:
         - containerPort: 80
           name: result
@@ -175,7 +175,7 @@ spec:
     spec:
       containers:
         - name: vote
-          image: us.gcr.io/modern-devops-294018/vote
+          image: us.gcr.io/modern-devops-294018/vote:1.0
           ports:
             - 
               containerPort: 80
@@ -211,5 +211,5 @@ spec:
     spec: 
       containers: 
         - 
-          image: dockersamples/examplevotingapp_worker
+          image: dockersamples/worker
           name: worker
