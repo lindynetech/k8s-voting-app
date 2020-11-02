@@ -175,7 +175,7 @@ spec:
     spec:
       containers:
         - name: vote
-          image: us.gcr.io/modern-devops-294018/vote:1.0
+          image: gcr.io/modern-devops-294018/github.com/lindynetech/k8s-voting-app:3.0
           ports:
             - 
               containerPort: 8080
