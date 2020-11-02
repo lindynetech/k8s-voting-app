@@ -175,12 +175,36 @@ spec:
     spec:
       containers:
         - name: vote
-          image: gcr.io/modern-devops-294018/github.com/lindynetech/k8s-voting-app:3.0
+          image: gcr.io/modern-devops-294018/github.com/lindynetech/k8s-voting-app:2.0
           ports:
             - 
               containerPort: 8080
               name: vote
               
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote-canary
+  labels:
+    app: vote
+spec:
+  selector:
+    matchLabels:
+      app: vote
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vote
+    spec:
+      containers:
+        - name: vote
+          image: gcr.io/modern-devops-294018/github.com/lindynetech/k8s-voting-app:3.0
+          ports:
+            - 
+              containerPort: 8080
+              name: vote
 --- 
 apiVersion: v1
 kind: Service
